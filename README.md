@@ -5,7 +5,7 @@ How to Access the Application :
 
 Clone the repository to your local machine
 
-  git clone <repository-url>
+  git clone https://github.com/Nagarjuna367/Payment-fraud.git
 
 Navigate to the project directory
 
