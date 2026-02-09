@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fraud Detection - Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <h1>Fraud Detection System</h1>
+                <p class="subtitle">Transaction Analysis Results</p>
+            </div>
+        </header>
+
+        <main>
+            <section class="results-section">
+                {% if error %}
+                    <div class="result-container error">
+                        <div class="result-header error-header">
+                            <h2>❌ Error Processing Transaction</h2>
+                        </div>
+                        <div class="result-body">
+                            <p class="error-message">{{ error }}</p>
+                        </div>
+                        <div class="result-footer">
+                            <a href="/predict" class="btn btn-primary">Try Again</a>
+                        </div>
+                    </div>
+                {% elif success %}
+                    {% if is_fraud %}
+                        <div class="result-container fraudulent">
+                            <div class="result-header fraudulent-header">
+                                <h2>🚨 FRAUDULENT TRANSACTION</h2>
+                                <p class="warning-text">This transaction is identified as FRAUD</p>
+                            </div>
+                            <div class="result-body">
+                                <div class="result-details">
+                                    <h3>Transaction Details</h3>
+                                    <div class="details-grid">
+                                        {{ details | safe }}
+                                    </div>
+                                    <div class="detail-item" style="margin-top: 20px; font-size: 1.1em;">
+                                        <span class="detail-label"><strong>Status:</strong></span>
+                                        <span class="detail-value fraudulent" style="font-size: 1.2em;"><strong>⚠️ FRAUD DETECTED</strong></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% else %}
+                        <div class="result-container normal">
+                            <div class="result-header normal-header">
+                                <h2>✅ LEGITIMATE TRANSACTION</h2>
+                                <p class="success-text">This transaction is identified as REAL</p>
+                            </div>
+                            <div class="result-body">
+                                <div class="result-details">
+                                    <h3>Transaction Details</h3>
+                                    <div class="details-grid">
+                                        {{ details | safe }}
+                                    </div>
+                                    <div class="detail-item" style="margin-top: 20px; font-size: 1.1em;">
+                                        <span class="detail-label"><strong>Status:</strong></span>
+                                        <span class="detail-value normal" style="font-size: 1.2em;"><strong>✓ REAL TRANSACTION</strong></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+
+                    <div class="result-footer">
+                        <a href="/predict" class="btn btn-primary">Analyze Another Transaction</a>
+                        <a href="/" class="btn btn-secondary">Back to Home</a>
+                    </div>
+                {% else %}
+                    <div class="result-container info">
+                        <div class="result-header info-header">
+                            <h2>🔍 No Results</h2>
+                        </div>
+                        <div class="result-body">
+                            <p>No prediction was generated. Please check your input and try again.</p>
+                        </div>
+                        <div class="result-footer">
+                            <a href="/predict" class="btn btn-primary">Go Back</a>
+                        </div>
+                    </div>
+                {% endif %}
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <p>&copy; 2026 Online Payments Fraud Detection System</p>
+                <p>Powered by Machine Learning | Built with Python & Flask</p>
+                <div class="footer-links">
+                    <a href="/">Home</a> |
+                    <a href="/predict">Prediction Tool</a> |
+                    <a href="/api/stats">Model Stats</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fraud Detection System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <h1>Online Payments Fraud Detection System</h1>
+                <p class="subtitle">Machine Learning Powered Real-Time Fraud Prevention</p>
+            </div>
+        </header>
+
+        <main>
+            <section class="hero">
+                <div class="hero-content">
+                    <h2>Protect Your Transactions</h2>
+                    <p>Advanced machine learning model to detect fraudulent transactions in real-time</p>
+                    <a href="/predict" class="btn btn-primary btn-large">Start Detection</a>
+                </div>
+            </section>
+
+            <section class="features">
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🛡️</div>
+                        <h3>Real-Time Detection</h3>
+                        <p>Instant fraud detection with high accuracy using advanced ML algorithms</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📊</div>
+                        <h3>97% Accuracy</h3>
+                        <p>Trained on 100,000+ transactions with proven fraud detection performance</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">⚡</div>
+                        <h3>Fast Processing</h3>
+                        <p>Sub-second predictions on transaction data</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔒</div>
+                        <h3>Secure & Private</h3>
+                        <p>Your transaction data is processed locally and never stored</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="model-stats">
+                <h2>Model Performance Metrics</h2>
+                <div class="stats-grid">
+                    <div class="stat-box">
+                        <h4>Model Type</h4>
+                        <p class="stat-value">Random Forest</p>
+                    </div>
+                    <div class="stat-box">
+                        <h4>Accuracy</h4>
+                        <p class="stat-value">99.91%</p>
+                    </div>
+                    <div class="stat-box">
+                        <h4>Precision</h4>
+                        <p class="stat-value">80.00%</p>
+                    </div>
+                    <div class="stat-box">
+                        <h4>Training Data</h4>
+                        <p class="stat-value">100,000 Txn</p>
+                    </div>
+                    <div class="stat-box">
+                        <h4>Fraud Cases</h4>
+                        <p class="stat-value">106 Cases</p>
+                    </div>
+                    <div class="stat-box">
+                        <h4>Features</h4>
+                        <p class="stat-value">7 Features</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="how-it-works">
+                <h2>How It Works</h2>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h3>Enter Transaction Details</h3>
+                        <p>Provide transaction information including type, amount, and account balances</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h3>ML Model Analysis</h3>
+                        <p>Our trained Random Forest model analyzes the transaction data</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h3>Fraud Assessment</h3>
+                        <p>Get instant prediction - Normal or Fraudulent transaction</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <h3>View Results</h3>
+                        <p>See detailed results with confidence scores and analysis</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="cta-section">
+                <h2>Ready to Detect Fraud?</h2>
+                <p>Test our fraud detection system with sample transaction data</p>
+                <a href="/predict" class="btn btn-primary btn-large">Go to Prediction Tool</a>
+            </section>
+
+            <section class="info-section">
+                <div class="info-box">
+                    <h3>About This System</h3>
+                    <p>This fraud detection system is built using machine learning with the following features:</p>
+                    <ul>
+                        <li><strong>Algorithm:</strong> Random Forest Classifier (100 estimators)</li>
+                        <li><strong>Dataset:</strong> 100,000 payment transactions</li>
+                        <li><strong>Features:</strong> 7 numerical and categorical features</li>
+                        <li><strong>Training/Test Split:</strong> 80% / 20%</li>
+                        <li><strong>Performance Metric:</strong> F1-Score with focus on precision-recall balance</li>
+                        <li><strong>Production Ready:</strong> Yes, with REST API support</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <p>&copy; 2026 Online Payments Fraud Detection System</p>
+                <p>Powered by Machine Learning | Built with Python & Flask</p>
+                <div class="footer-links">
+                    <a href="/predict">Detection Tool</a> |
+                    <a href="/api/health">API Status</a> |
+                    <a href="/api/stats">Model Stats</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
